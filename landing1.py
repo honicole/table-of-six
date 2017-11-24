@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from flask import Flask, render_template, request, jsonify
 import json
 #function takes a template filename and a variable list of template arguments and returns the rendered template, with all the arguments replaced
