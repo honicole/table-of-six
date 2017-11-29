@@ -1,8 +1,8 @@
 -- MySQL dump 10.13  Distrib 5.7.17, for macos10.12 (x86_64)
 --
--- Host: 127.0.0.1    Database: db
+-- Host: 127.0.0.1    Database: tableof6
 -- ------------------------------------------------------
--- Server version	5.7.20
+-- Server version	5.5.5-10.1.28-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -32,9 +32,10 @@ CREATE TABLE `eventreg` (
   `user4` varchar(30) DEFAULT NULL,
   `user5` varchar(30) DEFAULT NULL,
   `user6` varchar(30) DEFAULT NULL,
+  `NumRegistered` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`ID`),
   UNIQUE KEY `ID_UNIQUE` (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +44,7 @@ CREATE TABLE `eventreg` (
 
 LOCK TABLES `eventreg` WRITE;
 /*!40000 ALTER TABLE `eventreg` DISABLE KEYS */;
-INSERT INTO `eventreg` VALUES (1,'2017-11-29 12:00:00',1,'1','2','3',NULL,NULL,NULL),(2,'2017-11-30 15:00:00',3,'1','2','3',NULL,NULL,NULL),(3,'2017-11-28 17:30:00',2,'2','3',NULL,NULL,NULL,NULL),(4,'2017-11-20 21:00:00',5,'3','5','8','12',NULL,NULL);
+INSERT INTO `eventreg` VALUES (1,'2017-12-05 12:00:00',1,'1','2','3','17',NULL,NULL,3),(2,'2017-11-30 15:00:00',4,'1','2','3',NULL,NULL,NULL,3),(3,'2017-12-04 17:30:00',2,'2','3',NULL,NULL,NULL,NULL,2),(4,'2017-12-03 21:00:00',5,'3','5','8','12','2','1',6),(5,'2017-12-02 15:00:00',5,'6','','','',NULL,NULL,1);
 /*!40000 ALTER TABLE `eventreg` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -70,7 +71,7 @@ CREATE TABLE `restaurants` (
 
 LOCK TABLES `restaurants` WRITE;
 /*!40000 ALTER TABLE `restaurants` DISABLE KEYS */;
-INSERT INTO `restaurants` VALUES (1,'Bouillon Bilk','1234 rue sth','2147483647'),(2,'Bouillon Bilk','1234 rue sth','5148620283'),(3,'Kazu','4134 rue sth','4388620283'),(4,'onoir','1234 rue maisonneuve','4387210283'),(5,'resutarant1','1982 rue sth','4389608492'),(6,'restaurant2','4935 rue sth','5144928573');
+INSERT INTO `restaurants` VALUES (1,'Bouillon Bilk','1234 rue sth','2147483647'),(2,'restaurant2','4935 rue sth','5144928573'),(3,'Kazu','4134 rue sth','4388620283'),(4,'onoir','1234 rue maisonneuve','4387210283'),(5,'resutarant1','1982 rue sth','4389608492');
 /*!40000 ALTER TABLE `restaurants` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -110,4 +111,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-27 12:52:51
+-- Dump completed on 2017-11-29 12:48:43
