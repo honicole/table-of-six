@@ -1,9 +1,45 @@
-@charset "utf-8";
-/* CSS Document */
+@font-face {
+	font-family: 'Bebas Neue Bold';
+	src: url("/assets/fonts/BebasNeue-Bold.otf");
+}
+
+@font-face {
+	font-family: 'Bebas Neue Regular';
+	src: url("/assets/fonts/BebasNeue-Regular.otf");
+}
+
+@font-face {
+	font-family: 'Open Sans Light';
+	src: url("/assets/fonts/OpenSans-Light.ttf");
+}
+
+@font-face {
+	font-family: 'Open Sans SemiBold';
+	src: url("/assets/fonts/OpenSans-SemiBold.ttf");
+}
+
+@font-face {
+	font-family: 'Open Sans SemiBoldItalic';
+	src: url("/assets/fonts/OpenSans-SemiBoldItalic.ttf");
+}
+
+.row {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.row > [class*='col-'] {
+	display: flex;
+	flex-direction: column;
+}
 
 *{
 	margin:0;
 	padding:0;
+	font-family: 'Open Sans Light', sans-serif;
 }
 #login-form {
 	margin:5% auto;
@@ -12,4 +48,53 @@
 /* home page */
 #wrapper{
 	padding-top:50px;
+}
+
+/* Calendar */
+.jumbotron {
+	background-color: rgb(23, 162, 184)!important;
+}
+
+.cal {
+	padding: 30px;
+	border: 20px solid white;
+	background-color: rgba(80, 80, 80, 0.7);
+	color: white;
+	min-height: 282px;
+}
+
+/*
+.cal:hover {
+	background-color: rgb(104, 104, 104)!important;
+}
+*/
+
+h1 {
+	font-family: 'Bebas Neue Bold', sans-serif;
+	font-size: 4em;
+	color: white;
+	margin: 0px;
+	padding: 0px;
+}
+
+.location {
+	font-family: 'Open Sans SemiBoldItalic', sans-serif;
+	margin:0px;
+	padding: 0px;
+}
+
+.btn {
+	margin-top: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .col { 
+        display: block;
+        width: 100%;
+	}
+	
+	.cal {
+		margin:0px;
+		border: none;
+	}
 }

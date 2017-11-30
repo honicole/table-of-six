@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 30, 2017 at 01:06 AM
+-- Generation Time: Nov 30, 2017 at 05:08 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 5.6.32
 
@@ -45,11 +45,12 @@ CREATE TABLE `eventreg` (
 --
 
 INSERT INTO `eventreg` (`ID`, `Date`, `Location`, `user1`, `user2`, `user3`, `user4`, `user5`, `user6`) VALUES
-(1, '2017-12-05 12:00:00', 1, 3, 2, 5, 17, NULL, NULL),
-(2, '2017-11-30 15:00:00', 4, 1, 2, NULL, NULL, NULL, NULL),
-(3, '2017-12-04 17:30:00', 2, 2, 3, 1, NULL, NULL, NULL),
-(4, '2017-12-03 21:00:00', 5, 3, 5, 8, 12, 2, 1),
-(5, '2017-12-02 15:00:00', 5, 6, 5, 1, NULL, NULL, NULL);
+(1, '2017-12-07 12:00:00', 1, NULL, 2, 5, 17, NULL, NULL),
+(2, '2017-12-08 05:00:00', 4, 1, 2, 14, 8, 7, 3),
+(4, '2017-12-03 21:00:00', 2, 9, 5, 8, 12, 2, 1),
+(5, '2017-12-02 15:00:00', 5, 6, 5, 1, NULL, NULL, NULL),
+(7, '2017-12-01 23:00:00', 3, 2, 3, NULL, NULL, NULL, NULL),
+(8, '2017-12-04 11:00:00', 1, 2, 3, 8, 12, 5, NULL);
 
 -- --------------------------------------------------------
 
@@ -61,19 +62,20 @@ CREATE TABLE `restaurants` (
   `ID` int(11) NOT NULL,
   `name` varchar(45) NOT NULL,
   `address` varchar(45) NOT NULL,
-  `number` varchar(10) DEFAULT NULL
+  `number` varchar(10) DEFAULT NULL,
+  `img` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `restaurants`
 --
 
-INSERT INTO `restaurants` (`ID`, `name`, `address`, `number`) VALUES
-(1, 'Bouillon Bilk', '1234 rue sth', '2147483647'),
-(2, 'restaurant2', '4935 rue sth', '5144928573'),
-(3, 'Kazu', '4134 rue sth', '4388620283'),
-(4, 'onoir', '1234 rue maisonneuve', '4387210283'),
-(5, 'resutarant1', '1982 rue sth', '4389608492');
+INSERT INTO `restaurants` (`ID`, `name`, `address`, `number`, `img`) VALUES
+(1, 'Bouillon Bilk', '1234 rue sth', '2147483647', ''),
+(2, 'Ristorante Beatrice', '4935 rue sth', '5144928573', ''),
+(3, 'Kazu', '4134 rue sth', '4388620283', ''),
+(4, 'ONoir', '1234 rue maisonneuve', '4387210283', ''),
+(5, 'Delta Hotel', '1982 rue sth', '4389608492', '');
 
 -- --------------------------------------------------------
 
@@ -130,13 +132,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `eventreg`
 --
 ALTER TABLE `eventreg`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `restaurants`
 --
 ALTER TABLE `restaurants`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
