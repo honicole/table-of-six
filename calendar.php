@@ -25,7 +25,7 @@ $_SERVER['REQUEST_TIME'];
 </head>
 
 <body>
-	<div class="container">
+	<div class="container-fluid">
 		<div class="jumbotron text-center"><h1>Calendar</h1></div>
 		<div class="row"><?php
 		for ($i = 0; $i <= 8; $i++) {
