@@ -63,6 +63,10 @@
 	min-height: 282px;
 }
 
+.cal:hover {
+	transform: scale(1.1);
+}
+
 /*
 .cal:hover {
 	background-color: rgb(104, 104, 104)!important;
@@ -102,6 +106,10 @@ h1 {
 		border: none;
 	}
 
+	.cal:hover {
+		transform: none;
+	}
+	
 	.jumbotron {
 		margin:0px;
 		margin-left:-20px;
