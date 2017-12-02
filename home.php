@@ -1,57 +1,57 @@
 <?php
-	ob_start();
-	session_start();
-	require_once 'dbconnect.php';
-	
-	// if session is not set this will redirect to login page
-	if( !isset($_SESSION['user']) ) {
-		header("Location: index.php");
-		exit;
-	} else {
-		$cuser = $_SESSION['user'];
-	}
-	// select loggedin users detail
-	$res=mysql_query("SELECT * FROM users WHERE userId=".$_SESSION['user']);
-	$userRow=mysql_fetch_array($res);
-	
-	
-	if ( isset($_POST['btn-reg']) ) {
-		
-		// clean user inputs to prevent sql injections
-		$name = trim($_POST['name']);
-		$name = strip_tags($name);
-		$name = htmlspecialchars($name);
-		
-		$date = trim($_POST['date']);
-		$date = strip_tags($date);
-		$date = htmlspecialchars($date);
-		
-		$location = trim($_POST['location']);
-		$location = strip_tags($location);
-		$location = htmlspecialchars($location);
-		
-		//$date = $date." ".$time;
-		$date = $time;
-		
-		if( !$error ) {
-			
-			$query = "INSERT INTO eventreg(Date,Location,user1) VALUES('$date','$location','$cuser')";
-	
-			$res = mysql_query($query);
-				
-			if ($res) {
-				$errTyp = "success";
-				$errMSG = "Successfully registered a new event!";
-				unset($name);
-				unset($email);
-				unset($pass);
-			} else {
-				$errTyp = "danger";
-				$errMSG = "Something went wrong, try again later...";	
-			}	
-				
-		}
-	}
+    ob_start();
+    session_start();
+    require_once 'dbconnect.php';
+    
+    // if session is not set this will redirect to login page
+    if( !isset($_SESSION['user']) ) {
+        header("Location: index.php");
+        exit;
+    } else {
+        $cuser = $_SESSION['user'];
+    }
+    // select loggedin users detail
+    $res=mysql_query("SELECT * FROM users WHERE userId=".$_SESSION['user']);
+    $userRow=mysql_fetch_array($res);
+    
+    
+    if ( isset($_POST['btn-reg']) ) {
+        
+        // clean user inputs to prevent sql injections
+        $name = trim($_POST['name']);
+        $name = strip_tags($name);
+        $name = htmlspecialchars($name);
+        
+        $date = trim($_POST['date']);
+        $date = strip_tags($date);
+        $date = htmlspecialchars($date);
+        
+        $location = trim($_POST['location']);
+        $location = strip_tags($location);
+        $location = htmlspecialchars($location);
+        
+        //$date = $date." ".$time;
+        $date = $time;
+        
+        if( !$error ) {
+            
+            $query = "INSERT INTO eventreg(Date,Location,user1) VALUES('$date','$location','$cuser')";
+    
+            $res = mysql_query($query);
+                
+            if ($res) {
+                $errTyp = "success";
+                $errMSG = "Successfully registered a new event!";
+                unset($name);
+                unset($email);
+                unset($pass);
+            } else {
+                $errTyp = "danger";
+                $errMSG = "Something went wrong, try again later...";   
+            }   
+                
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -60,16 +60,18 @@
                 display: none;
                 position: absolute;
             }
-        </style>
+
+
+</style>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Welcome - <?php echo $userRow['userEmail']; ?></title>
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
-<body>
+<body style="background-color:#e0fffb;">
 
-	<nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -78,19 +80,19 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="http://www.google.ca"><b>Table of Six</b></a>
+          <a class="navbar-brand"><b>Table of Six</b></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="http://www.google.ca">About</a></li>
-			<li><a href="/new/templates/calendar.html">Event Calendar</a></li>
-            <li><a href="http://www.google.ca">User Info</a></li>
+            <li class="active"><a href="home.php">About</a></li>
+            <li><a href="calendar.php">Event Calendar</a></li>
+            <li><a href="Resto.html">Restaurant Info</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-			  <span class="glyphicon glyphicon-user"></span>&nbsp;Hi, <?php echo $userRow['userEmail']; ?>&nbsp;<span class="caret"></span></a>
+              <span class="glyphicon glyphicon-user"></span>&nbsp;Hi, <?php echo $userRow['userEmail']; ?>&nbsp;<span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a></li>
               </ul>
@@ -100,27 +102,30 @@
       </div>
     </nav> 
 
-	<div id="wrapper">
+    <div id="wrapper">
 
-	<div class="container">
+    <div class="container">
     
-    	<div class="page-header">
-    	<h3>Table of Six - Events</h3>
-    	</div>
+<div id="bout">
+        <div class="aboutt">
+<h1 class="heaad">Table of six is a social platform matching strangers to dine together</h1>
+<div class="meet">Do you enjoy meeting new people? </div> 
+<div class="try"> Did you always want to try a new restaurant? </div>
+<div class="perfect"> Then Table of Six is perfect for you! </div>
+<div class="event"> You can create an account and join an event: a table at a restaurant. Each event consists of up to 6 chairs at a restaurant. The creator of the event is in charge of making the reservation. There is a limit of one table per day, which can be reserved and created up to a week in advance. </div>
+<div class="inst"> You will meet up to 5 new strangers and enjoy a meal together. Each person is responsible of getting to the restaurant and pay for their own expenses. A list of suggested restaurants for the current week is also provided! </div>
+<div class="enjoy"> Enjoy!! </div>
+        </div>
+    </div>
+
         
-        <div class="row">
-        <div class="col-lg-12">
-        <h1>Networking locally...</h1>
-        </div>
-        </div>
-		
-		<!--reg event button hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-->
-		<a id="popup-clickie" href="fallback-link-to-form-page">Add Event</a>
-		<div class="alert alert-<?php echo ($errTyp=="success") ? "success" : $errTyp; ?>">
-				<span class="glyphicon glyphicon-info-sign"></span> <?php echo $errMSG; ?>
+        <!--reg event button hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-->
+        <a id="popup-clickie" href="fallback-link-to-form-page">Add Event</a>
+        <div class="alert alert-<?php echo ($errTyp=="success") ? "success" : $errTyp; ?>">
+                <span class="glyphicon glyphicon-info-sign"></span> <?php echo $errMSG; ?>
                 </div>
         <div id="popup-form">
-			<form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+            <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
             <table border="0"> 
                 <tr> 
                         <td>Userame</td>
@@ -131,21 +136,21 @@
                     <td>
                         <input type="date" name="date">
                     </td>
-					<td>Select the time</td>
-					<td>
-						<input type="time" name="time">
-					</td>
+                    <td>Select the time</td>
+                    <td>
+                        <input type="time" name="time">
+                    </td>
                 </tr> 
                 <tr>
                     <td>Select the restaurant</td>
                     <td>
                         <select name="location">
-						<?php
-						$result = mysql_query("SELECT * FROM restaurants");
-						while ($row = mysql_fetch_assoc($result)){
+                        <?php
+                        $result = mysql_query("SELECT * FROM restaurants");
+                        while ($row = mysql_fetch_assoc($result)){
                             echo '<option value=' . $row['ID'] . '>' . $row['name'] . '</option>';
-						}
-						?>
+                        }
+                        ?>
                         </select>
                     </td>
                 <tr> 

@@ -1,0 +1,64 @@
+.clearfix,.w-bar .clearfix,.e-bar .clearfix{
+	width:100% !important;
+	display:table;
+	margin-left:auto;
+	margin-right:auto;
+	*text-align:center;
+	padding-left: 70px;
+	}
+
+#plans .title{
+	font-size:35px;
+	margin-top: 55px;
+	color: black;
+	font-variant: small-caps;
+	text-align: center;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+#plans{
+	margin:24px auto 0;
+	}
+
+#plans .plan{
+	font-size:16px;float:left;
+	height:320px;width:280px;
+	line-height:36px;
+	border-right:1px dotted #000000;
+	border-top:1px dotted #000000;
+	border-bottom:1px dotted #000000;
+	border-left:1px dotted #000000;
+	padding:25px;
+	margin-top:20px;
+	margin-bottom:12px;
+	text-align:center;
+	}
+
+
+#plans .name{
+	font-size:24px;
+	font-weight:bold;
+	padding-top: 0px;
+	}
+
+#plans .price{
+	color:#FF0000;
+	font-weight:bold;
+	padding-top: 10px;
+	}
+
+
+#plans .plan:hover{
+	font-size:18px;
+	color:#000000;
+	border:3px solid #000000;
+	height:320px;
+	width:280px;
+	margin-top:55;
+	margin-bottom:0;
+	}
+
+
+
+
+

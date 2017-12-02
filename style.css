@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+	margin:0;
+	padding:0;
+}
+#login-form {
+	margin:5% auto;
+	max-width: 300px;
+}
+/* home page */
+#wrapper{
+	padding-top:50px;
+}
+
+#bout .heaad {
+        padding-top: 10px; 
+        color: red;
+    }
+
+#bout .meet {
+    padding-top: 20px;
+    font-size: 30px;
+    font-variant: small-caps;
+    text-align: center;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+#bout .try {
+	font-size: 35px;
+	font-variant: small-caps;
+	text-align: center;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+    }
+
+#bout .perfect {
+	font-size: 50px;
+	font-variant: small-caps;
+	text-align: center;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+    }
+
+#bout .event {
+	padding-top: 50px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+    }
+
+#bout .inst {
+	font-family: "Comic Sans MS", cursive, sans-serif;
+    }
+
+#bout.enjoy {
+	font-family: "Comic Sans MS", cursive, sans-serif;
+    }
+
+#bout .enjoy {
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	    font-weight: bold;
+	    padding-top: 20px;
+	    text-align: center;
+	    font-size: 50px;
+	    color: #0c0c0c;
+    }

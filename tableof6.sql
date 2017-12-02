@@ -71,11 +71,10 @@ CREATE TABLE `restaurants` (
 --
 
 INSERT INTO `restaurants` (`ID`, `name`, `address`, `number`, `img`) VALUES
-(1, 'Bouillon Bilk', '1234 rue sth', '2147483647', ''),
-(2, 'Ristorante Beatrice', '4935 rue sth', '5144928573', ''),
-(3, 'Kazu', '4134 rue sth', '4388620283', ''),
-(4, 'ONoir', '1234 rue maisonneuve', '4387210283', ''),
-(5, 'Delta Hotel', '1982 rue sth', '4389608492', '');
+(1, 'O.Noir', '124 Rue Prince Arthur East, Montreal, QC H2X 1B5', '2147483647', ''),
+(2, 'Lola Rosa Parc', '4581 Park Ave, Montreal, QC H2V 4E4', '5144928573', ''),
+(3, 'Restaurant Europea', '1227 Mountain St, Montreal, QC H3G 1Z2', '4388620283', ''),
+(4, 'Restaurant Bonaparte', '1447 St Francois Xavier St, Montreal, QC H2Y 2T1', '4387210283', ''),
 
 -- --------------------------------------------------------
 
