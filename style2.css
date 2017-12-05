@@ -1,3 +1,37 @@
+@font-face {
+	font-family: 'Bebas Neue Bold';
+	src: url("/assets/fonts/BebasNeue-Bold.otf");
+}
+
+@font-face {
+	font-family: 'Bebas Neue Regular';
+	src: url("/assets/fonts/BebasNeue-Regular.otf");
+}
+
+@font-face {
+	font-family: 'Open Sans Light';
+	src: url("/assets/fonts/OpenSans-Light.ttf");
+}
+
+@font-face {
+	font-family: 'Open Sans SemiBold';
+	src: url("/assets/fonts/OpenSans-SemiBold.ttf");
+}
+
+@font-face {
+	font-family: 'Open Sans SemiBoldItalic';
+	src: url("/assets/fonts/OpenSans-SemiBoldItalic.ttf");
+}
+
+* {
+	font-family: 'Open Sans Light', sans-serif;
+}
+
+.restoname {
+	font-family: 'Open Sans SemiBoldItalic', sans-serif;
+	font-size: 1.3em;
+}
+
 .clearfix,.w-bar .clearfix,.e-bar .clearfix{
 	width:100% !important;
 	display:table;
@@ -8,12 +42,13 @@
 	}
 
 #plans .title{
-	font-size:35px;
+	/*font-size:35px;*/
+	font-size: 4em;
 	margin-top: 55px;
 	color: black;
-	font-variant: small-caps;
+	/*font-variant: small-caps;*/
 	text-align: center;
-	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-family: 'Bebas Neue Bold', sans-serif;
 }
 
 #plans{
@@ -36,7 +71,6 @@
 
 
 #plans .name{
-	font-size:24px;
 	font-weight:bold;
 	padding-top: 0px;
 	}
@@ -48,15 +82,14 @@
 	}
 
 
-#plans .plan:hover{
-	font-size:18px;
+/*#plans .plan:hover{
 	color:#000000;
 	border:3px solid #000000;
 	height:320px;
 	width:280px;
 	margin-top:55;
 	margin-bottom:0;
-	}
+	}*/
 
 
 

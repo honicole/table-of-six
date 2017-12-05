@@ -51,6 +51,10 @@
 }
 
 /* Calendar */
+.navbar-fixed-top {
+	position: relative;
+}
+
 .jumbotron {
 	background-color: rgb(23, 162, 184)!important;
 }
@@ -104,6 +108,7 @@ h1 {
 	.cal {
 		margin:0px;
 		border: none;
+		min-width: 100%;
 	}
 
 	.cal:hover {
@@ -119,5 +124,9 @@ h1 {
 
 	.container-fluid {
 		padding: 0px;
+	}
+
+	.navbar-fixed-top {
+		margin-bottom: 0px!important;
 	}
 }

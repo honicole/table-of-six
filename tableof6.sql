@@ -2,8 +2,8 @@
 -- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Nov 30, 2017 at 05:08 PM
+-- Host: 127.0.0.1
+-- Generation Time: Dec 04, 2017 at 06:24 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 5.6.32
 
@@ -32,25 +32,25 @@ CREATE TABLE `eventreg` (
   `ID` int(11) NOT NULL,
   `Date` datetime NOT NULL,
   `Location` int(11) DEFAULT NULL,
-  `user1` int(11) DEFAULT NULL,
-  `user2` int(11) DEFAULT NULL,
-  `user3` int(11) DEFAULT NULL,
-  `user4` int(11) DEFAULT NULL,
-  `user5` int(11) DEFAULT NULL,
-  `user6` int(11) DEFAULT NULL
+  `user1` varchar(30) NOT NULL,
+  `user2` varchar(30) DEFAULT NULL,
+  `user3` varchar(30) DEFAULT NULL,
+  `user4` varchar(30) DEFAULT NULL,
+  `user5` varchar(30) DEFAULT NULL,
+  `user6` varchar(30) DEFAULT NULL,
+  `NumRegistered` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `eventreg`
 --
 
-INSERT INTO `eventreg` (`ID`, `Date`, `Location`, `user1`, `user2`, `user3`, `user4`, `user5`, `user6`) VALUES
-(1, '2017-12-07 12:00:00', 1, NULL, 2, 5, 17, NULL, NULL),
-(2, '2017-12-08 05:00:00', 4, 1, 2, 14, 8, 7, 3),
-(4, '2017-12-03 21:00:00', 2, 9, 5, 8, 12, 2, 1),
-(5, '2017-12-02 15:00:00', 5, 6, 5, 1, NULL, NULL, NULL),
-(7, '2017-12-01 23:00:00', 3, 2, 3, NULL, NULL, NULL, NULL),
-(8, '2017-12-04 11:00:00', 1, 2, 3, 8, 12, 5, NULL);
+INSERT INTO `eventreg` (`ID`, `Date`, `Location`, `user1`, `user2`, `user3`, `user4`, `user5`, `user6`, `NumRegistered`) VALUES
+(1, '2017-12-05 12:00:00', 1, '1', '2', '3', '17', NULL, NULL, 3),
+(2, '2017-11-30 15:00:00', 4, '1', '2', '3', NULL, NULL, NULL, 3),
+(3, '2017-12-04 17:30:00', 2, '2', '3', NULL, NULL, NULL, NULL, 2),
+(4, '2017-12-03 21:00:00', 5, '3', '5', '8', '12', '2', '1', 6),
+(5, '2017-12-02 15:00:00', 5, '6', '', '', '', NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -63,18 +63,21 @@ CREATE TABLE `restaurants` (
   `name` varchar(45) NOT NULL,
   `address` varchar(45) NOT NULL,
   `number` varchar(10) DEFAULT NULL,
-  `img` varchar(30) NOT NULL
+  `price` varchar(30) NOT NULL,
+  `phone` varchar(30) NOT NULL,
+  `website` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `restaurants`
 --
 
-INSERT INTO `restaurants` (`ID`, `name`, `address`, `number`, `img`) VALUES
-(1, 'O.Noir', '124 Rue Prince Arthur East, Montreal, QC H2X 1B5', '2147483647', ''),
-(2, 'Lola Rosa Parc', '4581 Park Ave, Montreal, QC H2V 4E4', '5144928573', ''),
-(3, 'Restaurant Europea', '1227 Mountain St, Montreal, QC H3G 1Z2', '4388620283', ''),
-(4, 'Restaurant Bonaparte', '1447 St Francois Xavier St, Montreal, QC H2Y 2T1', '4387210283', ''),
+INSERT INTO `restaurants` (`ID`, `name`, `address`, `number`, `price`, `phone`, `website`) VALUES
+(1, 'O.Noir', '124 Rue Prince Arthur East, Montreal, QC', '2147483647', '$$', '5140000000', 'http://www.onoir.com/'),
+(2, 'Lola Rosa Parc', '4581 Park Ave, Montreal, QC H2V 4E4', '0', '$', '5141111111', 'http://lolarosa.ca/'),
+(3, 'Restaurant Europea', '1227 Mountain St, Montreal, QC H3G 1Z2', '4388620283', '$$$$', '514-222-2222', 'http://www.europea.ca/'),
+(4, 'Restaurant Bonaparte', '447 St Francois Xavier St, Montreal, QC', '4387210283', '$$$', '514-333-3333', 'http://www.restaurantbonaparte.com/'),
+(5, 'Restaurant', '1982 rue sth', '4389608492', '$$', '123', 'google.com');
 
 -- --------------------------------------------------------
 
@@ -131,7 +134,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `eventreg`
 --
 ALTER TABLE `eventreg`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `restaurants`
