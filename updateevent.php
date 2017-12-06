@@ -1,4 +1,11 @@
 <?php
+/*
+    File: updateevent.php
+    Location: /xampp/htcdocs/update.php
+    Description: Create, join or delete event based on task ID passed in
+    Author: Nicole Ho
+*/
+
 ob_start();
 session_start();
 require_once 'dbconnect.php';

@@ -1,4 +1,11 @@
 <?php
+/*
+	File: calendar.php
+	Location: /xampp/htcdocs/calendar.php
+	Description: Display next seven days of events
+	Author: Nicole Ho
+*/
+
 ob_start();
 session_start();
 require_once 'dbconnect.php';
@@ -18,7 +25,7 @@ $_SERVER['REQUEST_TIME'];
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/calendar.css">
 
 	<script type="text/javascript" src="assets/js/jquery-1.12.3.js"></script>
 	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
@@ -26,57 +33,59 @@ $_SERVER['REQUEST_TIME'];
 
 	<title>Calendar</title>
 </head>
-<body>
 
-	    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand"><b>Table of Six</b></a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="home.php">About</a></li>
-            <li class="active"><a href="calendar.php">Event Calendar</a></li>
-            <li><a href="Resto.php">Restaurant Info</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-							<span class="glyphicon glyphicon-user"></span>&nbsp;Hi, <?php 
-							$getName = mysql_query("SELECT * FROM users WHERE userID=$cuser");
-								while ($row = mysql_fetch_array($getName)) {
-									echo $row['userName'];
-								} ?>&nbsp;<span class="caret"></span></a>
-								<ul class="dropdown-menu">
-                <li><a href="logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav> 
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand"><b>Table of Six</b></a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="calendar.php">Event Calendar</a></li>
+					<li><a href="Resto.php">Restaurant Info</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+						<span class="glyphicon glyphicon-user"></span>&nbsp;Hi, <?php 
+						$getName = mysql_query("SELECT * FROM users WHERE userID=$cuser");
+							while ($row = mysql_fetch_array($getName)) {
+								echo ucwords($row['userName']);
+							} ?>&nbsp;<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+							<li><a href="logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav> 
 
 
 	<div class="container-fluid">
-		<!--div class="jumbotron text-center"><h1>Calendar</h1></div-->
+		<div class="row-lg-12 text-center"><?php
+			echo '<p><a href="create.php" class="btn btn-info role="button">Create a Table</a></p>';
+		?></div>
+
 		<div class="row-lg-12"><?php
-		for ($i = 0; $i <= 8; $i++) {
-			echo '<div class="col-lg-4 col-md-6 col-sm-12 cal text-center">';
-			echo '<h1>' . date('M d', strtotime("+" . $i . " days")) . '</h1>';
-			echo '<div class="info">';
+		for ($i = 0; $i <= 6; $i++) {
 			$d = date('Y-m-d', strtotime("+" . $i . " days"));
 			$q = "SELECT * FROM eventreg WHERE Date LIKE '$d%'";
 			$res = mysql_query($q);
 			$hasEvent = mysql_num_rows($res);
 			if ($hasEvent > 0) {
 				while ($event = mysql_fetch_array($res)) {
+					echo '<div class="col-lg-4 col-md-6 col-sm-12 cal text-center">';
+					echo '<h1>' . date('M d', strtotime("+" . $i . " days")) . '</h1>';
+					echo '<div class="info">';
+				
 					$eid = $event['ID'];
 					$datetime = new DateTime($event['Date']);
 					$q2 = "SELECT * FROM restaurants WHERE ID=" . $event['Location'];
@@ -99,7 +108,7 @@ $_SERVER['REQUEST_TIME'];
 						$numReg = $row['reg_users'];
 						
 						if ($numReg >= 6) {
-							echo 'This event is currently full.<br>';
+							echo 'This table is currently full.<br>';
 						} else {
 							echo $numReg. '/6 users registered<br>';
 						}
@@ -117,12 +126,17 @@ $_SERVER['REQUEST_TIME'];
 						
 						}
 					}
+					echo '</div></div>';
 				}
 			} else {
-				echo 'There are currently no events on this date!';
-				echo '<p><a href="create.php" class="btn btn-info role="button">Create Event</a></p>';
+				echo '<div class="col-lg-4 col-md-6 col-sm-12 cal text-center">';
+				echo '<h1>' . date('M d', strtotime("+" . $i . " days")) . '</h1>';
+				echo '<div class="info">';
+				$d = date('Y-m-d', strtotime("+" . $i . " days"));
+
+				echo '<br>There are currently no tables on this date!';
+				echo '</div></div>';
 			}
-			echo '</div></div>';
 		}
 		?>
 		</div>

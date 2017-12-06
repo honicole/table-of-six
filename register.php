@@ -89,19 +89,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Coding Cage - Login & Registration System</title>
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
 </head>
 <body>
 
-<div class="container">
-	<div> <img src="table6.PNG" alt="Table of six" align="middle"></div>
+<div class="container-fluid text-center">
+	<div class="col banner"> <img src="table6.PNG" alt="Table of six" align="middle" class="bimg"></div>
 	<div id="login-form">
     <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
     
     	<div class="col-md-12">
         
         	<div class="form-group">
-            	<h2 class="">Sign Up.</h2>
+            	<h2>Create an account</h2>
             </div>
         
         	<div class="form-group">
@@ -150,7 +150,7 @@
             </div>
             
             <div class="form-group">
-            	<button type="submit" class="btn btn-block btn-primary" name="btn-signup">Sign Up</button>
+            	<button type="submit" class="btn btn-block btn-primary" name="btn-signup">Register</button>
             </div>
             
             <div class="form-group">
@@ -158,7 +158,7 @@
             </div>
             
             <div class="form-group">
-            	<a href="index.php">Sign in Here...</a>
+            	<a href="index.php">Go back to sign in</a>
             </div>
         
         </div>

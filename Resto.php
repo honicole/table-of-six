@@ -31,11 +31,7 @@
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
 <link rel="stylesheet" href="style2.css" type="text/css" />
 </head>
-<<<<<<< HEAD
 <body>
-=======
-<body style="background-color:#e0fffb;">
->>>>>>> bf407673198736d2ee36332ba85aae3fa2c25953
 
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -50,7 +46,6 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li ><a href="home.php">About</a></li>
             <li><a href="calendar.php">Event Calendar</a></li>
             <li class="active"><a href="Resto.php">Restaurant Info</a></li>
           </ul>
@@ -58,17 +53,12 @@
             
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-<<<<<<< HEAD
               <span class="glyphicon glyphicon-user"></span>&nbsp;Hi, <?php 
                 $getName = mysql_query("SELECT * FROM users WHERE userID=$cuser");
                 while ($row = mysql_fetch_array($getName)) {
                     echo $row['userName'];
                 } ?>&nbsp;<span class="caret"></span></a>
                 <ul class="dropdown-menu">
-=======
-              <span class="glyphicon glyphicon-user"></span>&nbsp;Hi, <?php echo $userRow['userEmail']; ?>&nbsp;<span class="caret"></span></a>
-              <ul class="dropdown-menu">
->>>>>>> bf407673198736d2ee36332ba85aae3fa2c25953
                 <li><a href="logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a></li>
               </ul>
             </li>
@@ -88,18 +78,13 @@
 
 <div id="plans" class="clearfix">
         <?php
-<<<<<<< HEAD
 $res=mysql_query("SELECT * FROM restaurants");
-=======
-$res=mysql_query("SELECT name, address, price, phone, website FROM restaurants");
->>>>>>> bf407673198736d2ee36332ba85aae3fa2c25953
 $userRow=mysql_fetch_array($res);
 $hasResto = mysql_num_rows($res);
 
 if ($hasResto > 0) {
     // output data of each row
     while($row = $userRow=mysql_fetch_array($res)) {
-<<<<<<< HEAD
       if ($row['ID'] <= 8 && $row['ID'] >= 5) {
         echo '<div class="plan"> <div class="name restoname">'. $row["name"] . '</div>';
         echo '<div class="price"> Address: '. $row["address"] . '</div>';
@@ -108,16 +93,6 @@ if ($hasResto > 0) {
         echo '</div>';
       }
   }
-=======
-
-        echo '<div class="plan"> <div class="name"> Name: '. $row["name"] . '</div>';
-        echo '<div class="price"> Address: '. $row["address"] . '</div>';
-        echo '<div class="name"> Price: '. $row["price"] . '</div>';
-        echo '<div class="name"> Phone: '. $row["phone"] . '</div>';
-        echo '<div class="name"> Website: '. $row["website"] . '</div> </div>';
-
-    }
->>>>>>> bf407673198736d2ee36332ba85aae3fa2c25953
 } else {
     echo "0 results";
 }
