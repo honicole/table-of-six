@@ -101,7 +101,7 @@ Hello
 
 <p> six and seven: (
 <?php
-$test =  exec('C:/Python27/python.exe C:/xampp/htdocs/six/testing/new/pyth.py');
+$test =  exec('python pyth.py');
 $arr = explode(" ", $test);
 $arr1 = preg_replace('/[^0-9.-]/', '', $arr);
 $lat = $arr1[6]; 
@@ -122,14 +122,16 @@ insert Maps1.html at bottom of page with title: Search your preferred restaurant
 function myMap() {
 var myCenter = new google.maps.LatLng(
 <?php
-$test =  exec('C:/Python27/python.exe C:/xampp/htdocs/pyth.py');
+//$test =  exec('C:/Python27/python.exe C:/xampp/htdocs/pyth.py');
+$test =  exec('python pyth.py');
 $arr = explode(" ", $test);
 $arr1 = preg_replace('/[^0-9.-]/', '', $arr);
 $lat = $arr1[0]; 
 echo $lat;
 ?>, 
 <?php
-$test =  exec('C:/Python27/python.exe C:/xampp/htdocs/pyth.py');
+//$test =  exec('C:/Python27/python.exe C:/xampp/htdocs/pyth.py');
+$test =  exec('python pyth.py');
 $arr = explode(" ", $test);
 $arr1 = preg_replace('/[^0-9.-]/', '', $arr);
 $lot = $arr1[1]; 
@@ -147,14 +149,16 @@ echo $lot;
 
   var myCenter2 = new google.maps.LatLng(
 <?php
-$test =  exec('C:/Python27/python.exe C:/xampp/htdocs/pyth.py');
+//$test =  exec('C:/Python27/python.exe C:/xampp/htdocs/pyth.py');
+$test =  exec('python pyth.py');
 $arr = explode(" ", $test);
 $arr1 = preg_replace('/[^0-9.-]/', '', $arr);
 $lat = $arr1[2]; 
 echo $lat;
 ?>, 
 <?php
-$test =  exec('C:/Python27/python.exe C:/xampp/htdocs/pyth.py');
+//$test =  exec('C:/Python27/python.exe C:/xampp/htdocs/pyth.py');
+$test =  exec('python pyth.py');
 $arr = explode(" ", $test);
 $arr1 = preg_replace('/[^0-9.-]/', '', $arr);
 $lot = $arr1[3]; 
@@ -165,14 +169,16 @@ echo $lot;
 
   var myCenter3 = new google.maps.LatLng(
 <?php
-$test =  exec('C:/Python27/python.exe C:/xampp/htdocs/pyth.py');
+//$test =  exec('C:/Python27/python.exe C:/xampp/htdocs/pyth.py');
+$test =  exec('python pyth.py');
 $arr = explode(" ", $test);
 $arr1 = preg_replace('/[^0-9.-]/', '', $arr);
 $lat = $arr1[4]; 
 echo $lat;
 ?>, 
 <?php
-$test =  exec('C:/Python27/python.exe C:/xampp/htdocs/pyth.py');
+//$test =  exec('C:/Python27/python.exe C:/xampp/htdocs/pyth.py');
+$test =  exec('python pyth.py');
 $arr = explode(" ", $test);
 $arr1 = preg_replace('/[^0-9.-]/', '', $arr);
 $lot = $arr1[5]; 
@@ -183,14 +189,16 @@ echo $lot;
 
       var myCenter4 = new google.maps.LatLng(
 <?php
-$test =  exec('C:/Python27/python.exe C:/xampp/htdocs/pyth.py');
+//$test =  exec('C:/Python27/python.exe C:/xampp/htdocs/pyth.py');
+$test =  exec('python pyth.py');
 $arr = explode(" ", $test);
 $arr1 = preg_replace('/[^0-9.-]/', '', $arr);
 $lat = $arr1[6]; 
 echo $lat;
 ?>, 
 <?php
-$test =  exec('C:/Python27/python.exe C:/xampp/htdocs/pyth.py');
+//$test =  exec('C:/Python27/python.exe C:/xampp/htdocs/pyth.py');
+$test =  exec('python pyth.py');
 $arr = explode(" ", $test);
 $arr1 = preg_replace('/[^0-9.-]/', '', $arr);
 $lot = $arr1[7]; 

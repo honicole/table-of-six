@@ -62,12 +62,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Table of Six</title>
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
-<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 </head>
 <body>
 
 <div class="container-fluid text-center">
-	<div class="col banner"><img src="table6.PNG" alt="Table of six" align="middle" class="bimg"></div>
+	<div class="col banner"><img src="assets/img/table6.PNG" alt="Table of six" align="middle" class="bimg"></div>
 
 	<div class="col-lg-12 descr" style="padding-top: 50px;">
 		Table of Six is a social platform matching strangers with common interests to dine together.<br>

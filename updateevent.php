@@ -1,7 +1,7 @@
 <?php
 /*
     File: updateevent.php
-    Location: /xampp/htcdocs/update.php
+    Location: /xampp/htcdocs/updateevent.php
     Description: Create, join or delete event based on task ID passed in
     Author: Nicole Ho
 */
