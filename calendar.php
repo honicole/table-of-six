@@ -49,7 +49,7 @@ $_SERVER['REQUEST_TIME'];
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="calendar.php">Event Calendar</a></li>
-					<li><a href="Resto1.php">Restaurant Info</a></li>
+					<li><a href="Resto.php">Restaurant Info</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
