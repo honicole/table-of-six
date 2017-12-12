@@ -31,7 +31,7 @@
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
 <link rel="stylesheet" href="style2.css" type="text/css" />
 </head>
-<body style="background-color:#e0fffb;">
+<body>
 
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -46,7 +46,6 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li ><a href="home.php">About</a></li>
             <li><a href="calendar.php">Event Calendar</a></li>
             <li class="active"><a href="Resto.php">Restaurant Info</a></li>
           </ul>
@@ -54,8 +53,12 @@
             
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-              <span class="glyphicon glyphicon-user"></span>&nbsp;Hi, <?php echo $userRow['userEmail']; ?>&nbsp;<span class="caret"></span></a>
-              <ul class="dropdown-menu">
+              <span class="glyphicon glyphicon-user"></span>&nbsp;Hi, <?php 
+                $getName = mysql_query("SELECT * FROM users WHERE userID=$cuser");
+                while ($row = mysql_fetch_array($getName)) {
+                    echo ucwords($row['userName']);
+                } ?>&nbsp;<span class="caret"></span></a>
+                <ul class="dropdown-menu">
                 <li><a href="logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a></li>
               </ul>
             </li>
