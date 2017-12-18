@@ -6,7 +6,7 @@ import json, requests
 response = []
 response1 = []
 final_list = []
-data = json.load(open('C:/xampp/htdocs/six/testing/new/jtest.json'))
+data = json.load(open('C:/xampp/htdocs/six/testing/new/restaurantdata.json'))
 for i in data:
 	add = i['address']
 	response.append(add)
@@ -86,4 +86,3 @@ resto2()
 resto3()
 resto4()
 print(latti, lotte, latti2, lotte2, latti3, lotte3, latti4, lotte4)
-

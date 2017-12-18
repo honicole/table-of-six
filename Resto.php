@@ -98,23 +98,32 @@ if ($hasResto > 0) {
 }
 ?> 
 </div>
-<!-- 
-Hello 
-
-<?php
-$python = 'python pyth.py';
-echo $python;
-?>
-insert Maps1.html at bottom of page with title: Search your preferred restaurant on the map 
-<div class="map">
-<object width="100%" height="100%" type="text/html" data="Maps1.html"></object>
-</div> -->
-
 <div id="map" style="width:100%;height:400px;"></div>
 
 <script>
 function myMap() {
-var myCenter = new google.maps.LatLng(45.515107, -73.571431);
+
+  //using pyth_address file only works for first two restaurants, then its execution time is too long so the map does not get displayed.
+  //commented cannot be executed due to execution time constraint
+
+  var latti = 
+  <?php
+  $test =  exec('C:/Python27/python.exe C:/xampp/htdocs/six/testing/new/pyth_address.py');
+  $arr = explode(" ", $test);
+  $arr1 = preg_replace('/[^0-9.-]/', '', $arr);
+  $lat = $arr1[0]; 
+  echo $lat;
+  ?>;
+  var lotte = 
+  <?php
+  $test =  exec('C:/Python27/python.exe C:/xampp/htdocs/six/testing/new/pyth_address.py');
+  $arr = explode(" ", $test);
+  $arr1 = preg_replace('/[^0-9.-]/', '', $arr);
+  $lot = $arr1[1]; 
+  echo $lot;
+  ?>;
+
+  var myCenter = new google.maps.LatLng(latti, lotte);
   var mapCanvas = document.getElementById("map");
   var mapOptions = {
     center: myCenter, zoom: 13,     
@@ -125,19 +134,73 @@ var myCenter = new google.maps.LatLng(45.515107, -73.571431);
     overviewMapControl: true,
     rotateControl: true};
 
-  var myCenter2 = new google.maps.LatLng(45.517594, -73.590686);
+  var latti2 = 
+  <?php
+  $test =  exec('C:/Python27/python.exe C:/xampp/htdocs/six/testing/new/pyth_address.py');
+  $arr = explode(" ", $test);
+  $arr1 = preg_replace('/[^0-9.-]/', '', $arr);
+  $lat = $arr1[2]; 
+  echo $lat;
+  ?>;
+  var lotte2 = 
+  <?php
+  $test =  exec('C:/Python27/python.exe C:/xampp/htdocs/six/testing/new/pyth_address.py');
+  $arr = explode(" ", $test);
+  $arr1 = preg_replace('/[^0-9.-]/', '', $arr);
+  $lot = $arr1[3]; 
+  echo $lot;
+  ?>;
+
+
+  var myCenter2 = new google.maps.LatLng(latti2, lotte2);
   var mapOptions2 = {
     center: myCenter, zoom: 13};
 
-  var myCenter3 = new google.maps.LatLng(45.497733, -73.574161);
+  // var latti3 = 
+  // <?php
+  // $test =  exec('C:/Python27/python.exe C:/xampp/htdocs/six/testing/new/pyth_address.py');
+  // $arr = explode(" ", $test);
+  // $arr1 = preg_replace('/[^0-9.-]/', '', $arr);
+  // $lat = $arr1[4]; 
+  // echo $lat;
+  // ?>;
+  // var lotte3 = 
+  // <?php
+  // $test =  exec('C:/Python27/python.exe C:/xampp/htdocs/six/testing/new/pyth_address.py');
+  // $arr = explode(" ", $test);
+  // $arr1 = preg_replace('/[^0-9.-]/', '', $arr);
+  // $lot = $arr1[5]; 
+  // echo $lot;
+  // ?>;
+
+  // var myCenter3 = new google.maps.LatLng(latti3, lotti3);
+  var myCenter3 = new google.maps.LatLng(45.517594, -73.590686);
   var mapOptions3 = {
     center: myCenter, zoom: 13};
 
-      var myCenter4 = new google.maps.LatLng(45.503346, -73.556176);
+    // var latti4 = 
+  // <?php
+  // $test =  exec('C:/Python27/python.exe C:/xampp/htdocs/six/testing/new/pyth_address.py');
+  // $arr = explode(" ", $test);
+  // $arr1 = preg_replace('/[^0-9.-]/', '', $arr);
+  // $lat = $arr1[6]; 
+  // echo $lat;
+  // ?>;
+  // var lotte4 = 
+  // <?php
+  // $test =  exec('C:/Python27/python.exe C:/xampp/htdocs/six/testing/new/pyth_address.py');
+  // $arr = explode(" ", $test);
+  // $arr1 = preg_replace('/[^0-9.-]/', '', $arr);
+  // $lot = $arr1[7]; 
+  // echo $lot;
+  // ?>;
+
+  // var myCenter4 = new google.maps.LatLng(latti4, lotti4);
+  var myCenter4 = new google.maps.LatLng(45.5048, -73.5772);
   var mapOptions4 = {
     center: myCenter, zoom: 13};
 
-  var map = new google.maps.Map(mapCanvas, mapOptions, mapOptions2);
+  var map = new google.maps.Map(mapCanvas, mapOptions, mapOptions2, mapOptions3, mapOptions4);
   var marker = new google.maps.Marker({position:myCenter});
   var marker2 = new google.maps.Marker({position:myCenter2});
   var marker3 = new google.maps.Marker({position:myCenter3});
@@ -148,6 +211,47 @@ var myCenter = new google.maps.LatLng(45.515107, -73.571431);
   marker4.setMap(map);
 
 
+    // var infowindow = new google.maps.InfoWindow({ content: 
+    //   <?php
+    //   $test =  exec('C:/Python27/python.exe C:/xampp/htdocs/six/testing/new/pyth_name.py');
+    //   $arr = explode(",", $test);
+    //   $arr1 = preg_replace('/[^a-zA-Z0-9\']/', ' ', $arr);
+    //   $first_resto = $arr1[0]; 
+    //   echo $first_resto;
+    //   ?> 
+    // });
+    // infowindow.open(map,marker);
+    // var infowindow2 = new google.maps.InfoWindow({ content: 
+    //   <?php
+    //   $test =  exec('C:/Python27/python.exe C:/xampp/htdocs/six/testing/new/pyth_name.py');
+    //   $arr = explode(",", $test);
+    //   $arr1 = preg_replace('/[^a-zA-Z0-9\']/', ' ', $arr);
+    //   $first_resto = $arr1[1]; 
+    //   echo $first_resto;
+    //   ?> 
+    // });
+    // infowindow2.open(map,marker2);
+    // var infowindow3 = new google.maps.InfoWindow({ content: content: 
+    //   <?php
+    //   $test =  exec('C:/Python27/python.exe C:/xampp/htdocs/six/testing/new/pyth_name.py');
+    //   $arr = explode(",", $test);
+    //   $arr1 = preg_replace('/[^a-zA-Z0-9\']/', ' ', $arr);
+    //   $first_resto = $arr1[2]; 
+    //   echo $first_resto;
+    //   ?> 
+    // });
+    // infowindow3.open(map,marker3);
+    // var infowindow4 = new google.maps.InfoWindow({ content: 
+    //   <?php
+    //   $test =  exec('C:/Python27/python.exe C:/xampp/htdocs/six/testing/new/pyth_name.py');
+    //   $arr = explode(",", $test);
+    //   $arr1 = preg_replace('/[^a-zA-Z0-9\']/', ' ', $arr);
+    //   $first_resto = $arr1[3]; 
+    //   echo $first_resto;
+    //   ?> 
+    // });
+    // infowindow4.open(map,marker4);
+
     var infowindow = new google.maps.InfoWindow({ content: "O.Noir" });
     infowindow.open(map,marker);
     var infowindow2 = new google.maps.InfoWindow({ content: "Lola Rosa Parc" });
@@ -156,6 +260,7 @@ var myCenter = new google.maps.LatLng(45.515107, -73.571431);
     infowindow3.open(map,marker3);
     var infowindow4 = new google.maps.InfoWindow({ content: "Restaurant Bonaparte" });
     infowindow4.open(map,marker4);
+
 
 }
 </script>
@@ -175,4 +280,3 @@ var myCenter = new google.maps.LatLng(45.515107, -73.571431);
 </script>
 </body>
 </html>
-

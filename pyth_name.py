@@ -8,7 +8,7 @@ response1 = []
 final_list = []
 x = []
 
-data = json.load(open('C:/xampp/htdocs/six/testing/new/jtest.json'))
+data = json.load(open('C:/xampp/htdocs/restaurantdata.json'))
 for i in data:
 	add = i['address']
 	response.append(add)
